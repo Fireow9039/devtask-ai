@@ -4,6 +4,11 @@ DevTask AI is a full-stack AI-powered project management platform that helps use
 
 The platform converts software requirements into user stories, acceptance criteria, test cases, and sprint summaries.
 
+## Live Demo
+
+- Frontend: https://devtask-ai-pv1w.vercel.app
+- API Documentation: https://devtask-ai-1.onrender.com/docs
+
 ## Features
 
 - User signup, login, and logout with Supabase Auth
