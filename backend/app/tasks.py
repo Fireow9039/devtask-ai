@@ -112,3 +112,17 @@ def delete_task(task_id: str):
         raise HTTPException(status_code=404, detail="Task not found")
 
     return {"message": "Task deleted successfully"}
+
+@router.put("/{task_id}")
+def update_task(task_id: str, task: TaskUpdate):
+    result = (
+        supabase.table("tasks")
+        .update(task.dict(exclude_unset=True))
+        .eq("id", task_id)
+        .execute()
+    )
+
+    if not result.data:
+        raise HTTPException(status_code=404, detail="Task not found")
+
+    return result.data[0]
